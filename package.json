@@ -1,0 +1,29 @@
+{
+  "name": "gomeria-la-sexta",
+  "version": "1.0.0",
+  "description": "incluyendo npm",
+  "main": "index.html",
+  "scripts": {
+    "build-css": "node-sass --include-path scss styles/scss/style.scss styles/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmaromero2/idea-juan-romero.git"
+  },
+  "keywords": [
+    "juanma",
+    "gomeria",
+    "npm"
+  ],
+  "author": "ASC/PUC Juan Manuel Romero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanmaromero2/idea-juan-romero/issues"
+  },
+  "homepage": "https://github.com/juanmaromero2/idea-juan-romero#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
