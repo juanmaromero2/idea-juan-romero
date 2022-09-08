@@ -1,0 +1,15 @@
+$mapa1:(
+    p1: rgb(189, 184, 184), 
+    p2: rgb(151, 147, 147), 
+    p3: rgb(131, 99, 99)
+);
+@each $titulos, $colorfondo in $mapa1 {
+    .p-#{$titulos} {
+        background-color: $colorfondo;
+    }
+}
+
+@mixin menu{
+    display: flex;
+    justify-content: space-evenly;
+}
