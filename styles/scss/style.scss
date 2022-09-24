@@ -5,6 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Prompt', sans-serif;
+}
 .encabezado{
     display: flex;
     border-style: solid;
@@ -29,7 +32,6 @@
     color: black;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(97,97,97,1) 50%, rgba(0,0,0,1) 100%);
-    font-family: none;
     size: 22px;
 }
 .a:hover{
@@ -42,7 +44,6 @@
 .seccion{
     display: grid;
     width: 100%;
-    height: 420px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows:  1fr;
 }
@@ -66,7 +67,6 @@ height: 100%;
     color: black;
     background: $colorgris;
     background: linear-gradient(90deg, rgba(77,77,77,1) 0%, rgba(0,0,0,1) 50%, rgba(77,77,77,1) 100%);
-    font-family: none;
 }
 .a2:hover{
     transform: scale(1.2);
@@ -83,7 +83,6 @@ height: 100%;
     @include menu ();
     align-items:flex-start;
     background-color: black;
-    font-family: none;
     line-height:15px;
 }
 .p{
@@ -112,11 +111,11 @@ h5{
 /* pagina comentarios */
 .comentarios{
     width: 100%;
-    height:100px;
     background-color: $colorrojito;
     text-align: center;
     font-size:x-large;
     text-decoration:underline;
+    padding-bottom: 10px;
 }
 .cuadro{
     display: flex;
@@ -125,8 +124,8 @@ h5{
     justify-content: center;
     overflow: auto;
     width: 100%;
-    height: 270px;
     background-color: $colorrojito;
+    padding-bottom: 40px;
 }
 .texto{
     align-content: center;
@@ -166,8 +165,9 @@ h5{
 /* pagina sobre nosotros */
 .sobrenosotros{
     width: 100%;
-    height: 370px;
     background-color: $colorrojito;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .lista2{
     display: flex;
@@ -178,18 +178,19 @@ h5{
 /*pagina servicios*/
 .seccion-servicios{
     width: 100%;
-    height: 370px;
     display: grid;
     grid-template-columns:repeat(3,1fr) ;
     grid-template-rows:1fr 1fr ;
     list-style: none;
     place-items: center;
     background-color: $colorrojito;
+    padding: 10px;
 }
 .card{
     @include menu ();
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     padding: 2px;
     border-radius: 10px;
     width: 400px;
@@ -211,10 +212,25 @@ h5{
 /*responsive mobile*/
 
 @media screen and (max-width: 480px) {
+    .encabezado{
+        height: 170px;
+    }
+    .seccion{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    }
+    .menu2{
+        display: flex;
+        flex-direction: row;
+    }
     .menu{
         flex-direction: column;
         align-items: flex-start;
         font-size: 10px;
+    }
+    .a2{
+        padding-left: 0;
+        padding-right: 0;
     }
     .a{
     border-bottom: 4px;
