@@ -216,9 +216,9 @@ h5{
     background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
 }
 .tienda{
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
+    // width: 200px;
+    // height: 200px;
+    background-color: rgb(138, 134, 134);
     margin: 20px;
     border-radius: 10px;
     display: flex;
@@ -229,7 +229,7 @@ h5{
 .conteinerTienda{
     background-color: $colorrojito;
     display: grid;
-    grid-template-columns:repeat(4,1fr) ;
+    grid-template-columns:repeat(5,1fr) ;
     grid-template-rows:1fr 1fr ;
     place-items: center;
     gap: 0.5rem;
@@ -239,12 +239,42 @@ h5{
     width: 7rem;
     height: 7rem;
 }
-.btn-agregar{
+.btn-comprar{
     padding: 0.5rem;
     text-transform: uppercase;
     border-radius: 2rem;
     cursor: pointer;
     border: 1px solid ;
+}
+.carrito{
+    margin-left: 15rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+/*******pagina carrito*******/
+.super-contenedor{
+    height: 100vh;
+    background-color: $colorrojito;
+    padding:2rem;
+}
+.cont-botones{
+    display: flex;
+    justify-content:space-evenly;
+    background-color: $colorgris;
+    border-radius: 15px;
+}
+.boton-volver{
+    border-style: solid;
+    padding: 3px;
+    text-decoration:none;
+    background: rgb(0,0,0);
+    color: white;
+    border-radius: 2rem;
+    margin: 3rem;
+}
+.conteiner-carrito{
+    display: flex;
 }
 /*animista*/
 .bounce-in-fwd{-webkit-animation:bounce-in-fwd 1.1s both;animation:bounce-in-fwd 1.1s both}

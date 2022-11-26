@@ -1,53 +1,133 @@
+const neumaticos = [
+    {id: "cubierta01" ,
+    marca: "Pirelli",
+    medida:"165/70/13" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta02" ,
+    marca: "Pirelli",
+    medida:"175/70/13" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta03" ,
+    marca: "Pirelli",
+    medida:"175/65/14" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta04" ,
+    marca: "Pirelli",
+    medida:"185/60/14" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta05" ,
+    marca: "Pirelli",
+    medida:"195/70/14" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta06" ,
+    marca: "Pirelli",
+    medida:"185/65/15" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta07" ,
+    marca: "Pirelli",
+    medida:"195/55/15" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta08" ,
+    marca: "Pirelli",
+    medida:"195/60/15" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta09" ,
+    marca: "Pirelli",
+    medida:"205/65/15" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: 10000},
+    {id: "cubierta10" ,
+    marca: "Pirelli",
+    medida:"195/55/16" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta11" ,
+    marca: "Pirelli",
+    medida:"205/55/16" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta12" ,
+    marca: "Pirelli",
+    medida:"225/70/16" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta13" ,
+    marca: "Pirelli",
+    medida:"215/45/17" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta14" ,
+    marca: "Pirelli",
+    medida:"245/50/17" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+    {id: "cubierta15" ,
+    marca: "Pirelli",
+    medida:"265/65/17" ,
+    imagen: src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU",
+    precio: "$10000"},
+];
 
-// let cliente = prompt("Hola! ingrese su nombre");
-// function saludar(cliente) {
-//     alert("Bienvenido " + cliente + " a Gomeria La Sexta.")
-// }
-// saludar(cliente);
+const conteinerTienda =  document.querySelector("#conteinerTienda");
+let botonesComprar = document.querySelectorAll(".btn-agregar");
+let numeroCantidad = document.querySelector("#numeroCantidad");
 
-// alert("Esta es la sección de venta de neumaticos.");
+function agregarCubiertas(){
+    neumaticos.forEach(neumaticos => {
+        let div = document.createElement("div");
+        div.classList.add("tienda");
+        div.innerHTML = `
+        <img class="imgTienda" src="${neumaticos.imagen}" alt="${neumaticos.medida}">
+        <p>${neumaticos.marca}</p>
+        <p>${neumaticos.medida}</p>
+        <p>${neumaticos.precio}</p>
+        <button class="btn-comprar" id="${neumaticos.id}">Comprar</button>
+        `;
+        conteinerTienda.append(div);
+    })
+    agregarBtnComprar ();
+};
+agregarCubiertas();
 
-// let neumatico = prompt("Desea comprar neumaticos?(si/no)");
-// if (neumatico == "si"){
-//     alert("Perfecto, en el siguiente paso indique la medida que busca.");
-// } else if(neumatico == "no"){
-//     alert("Disculpe no podemos ayudarlo.");
-// } else {
-//     alert("ayuda.");
-// }
+function agregarBtnComprar () {
+    botonesComprar = document.querySelectorAll(".btn-comprar");
 
-// // let medida = prompt("Ingrese la medida que busca.(de 13 a 17 pulgadas)");
-// // switch (medida) {
-// //     case "13 pulgadas":
-// //         alert("Disponible: 165/70/13, 175/65/13.")
-// //         breack;
-// //     case "14 pulgadas":
-// //         alert("Disponible: 175/65/14, 175/70/14, 185/60/14.")
-// //         breack;
-// //     case "15 pulgadas":
-// //         alert("Disponible: 185/60/15, 195/65/15, 205/70/15.")
-// //         breack;
-// //     case "16 pulgadas":
-// //         alert("Disponible: 205/55/16, 225/70/16, 265/65/16.")
-// //         breack;
-// //     case "17 pulgadas":
-// //         alert("Disponible: 215/50/17, 225/55/17, 265/65/17.")
-// //         breack;
-// //     default:
-// //         alert("No disponemos la medida solicitada.")
-// // }
+    botonesComprar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+    })
+};
 
-// let medida = prompt("Ingrese la medida que busca.(de 13 a 17 pulgadas)");
-// // debe ingresar la medida con la palabra pulgadas, por ejemplo "14 pulgadas"
-// const neumaticos = [
-//     {cubierta: "13 pulgadas", precio: 25000},
-//     {cubierta: "14 pulgadas", precio: 30000},
-//     {cubierta: "15 pulgadas", precio: 35000},
-//     {cubierta: "16 pulgadas", precio: 40000},
-//     {cubierta: "17 pulgadas", precio: 45000},
-// ];
+const neumaticosEnCarrito = []
 
-// console.log(neumaticos.find((neumatico) => neumatico.cubierta === medida));
+function agregarAlCarrito(e){
+    const idBoton = e.currentTarget.id;
 
-// const rueda = neumaticos.some((neumatico) => neumatico.cubierta === medida);
-// console.log(rueda);
+    const neumaticoComprado = neumaticos.find(neumatico => neumatico.id === idBoton);
+    
+    if(neumaticosEnCarrito.some(neumatico => neumatico.id === idBoton)){
+        const indice = neumaticosEnCarrito.findIndex(neumatico => neumatico.id === idBoton);
+        neumaticosEnCarrito[indice].cantidad++;
+    }
+        else{
+            neumaticoComprado.cantidad = 1;
+            neumaticosEnCarrito.push(neumaticoComprado);
+        };
+
+        actualizarCantidad();
+
+        localStorage.setItem("neumaticos-en-carrito", JSON.stringify(neumaticosEnCarrito));
+}
+
+
+function actualizarCantidad(){
+    let nuevoNumeroCantidad = neumaticosEnCarrito.reduce((acc, neumatico) => acc + neumatico.cantidad, 0);
+    numeroCantidad.innerText = nuevoNumeroCantidad;
+}

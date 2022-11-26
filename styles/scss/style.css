@@ -243,9 +243,7 @@ h2, h5, h3 {
 }
 
 .tienda {
-  width: 200px;
-  height: 200px;
-  background-color: aqua;
+  background-color: rgb(138, 134, 134);
   margin: 20px;
   border-radius: 10px;
   display: flex;
@@ -257,7 +255,7 @@ h2, h5, h3 {
 .conteinerTienda {
   background-color: rgb(206, 10, 10);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
   place-items: center;
   gap: 0.5rem;
@@ -269,12 +267,46 @@ h2, h5, h3 {
   height: 7rem;
 }
 
-.btn-agregar {
+.btn-comprar {
   padding: 0.5rem;
   text-transform: uppercase;
   border-radius: 2rem;
   cursor: pointer;
   border: 1px solid;
+}
+
+.carrito {
+  margin-left: 15rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+/*******pagina carrito*******/
+.super-contenedor {
+  height: 100vh;
+  background-color: rgb(206, 10, 10);
+  padding: 2rem;
+}
+
+.cont-botones {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(59, 54, 54);
+  border-radius: 15px;
+}
+
+.boton-volver {
+  border-style: solid;
+  padding: 3px;
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  color: white;
+  border-radius: 2rem;
+  margin: 3rem;
+}
+
+.conteiner-carrito {
+  display: flex;
 }
 
 /*animista*/

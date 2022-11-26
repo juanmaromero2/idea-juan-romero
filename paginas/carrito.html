@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/scss/style.css" />
+    <script defer src="../js/carrito.js"></script>
 </head>
+
 <body>
-    <div class="contenedor-carrito">
-        <div class="productos-carrito">
-            <div class="producto-carro">
-                <div class="producto-carro-nombre">
-                <p>medida de cubierta</p>
+    <div>
+        <aside>
+            <header>
+                <div  class="img">
+                    <a href="../index.html"><img src="../imagen/imagen.png" alt="logo de gomeria"></a>
                 </div>
-                <div class="producto-carro-cantidad">
-                <p>cantidad 1</p>
+            </header>
+            <h1 class="titulo">Neumaticos en carrito</h1>
+        </aside>
+        <main class="super-contenedor">
+            <nav class="cont-botones">
+                        <a class="boton-volver" href="./tienda.html">volver a la tienda</a>
+                        <a class="boton-volver" href="">comprar</a>
+            </nav>
+            <div id="conteiner-carrito" class="conteiner-carrito">
+                <div class="neumaticos-carrito">
+                    <div class="tienda">
+                        <img class="imgTienda" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAGx-Z5nW1uHjg3Xx8sAUaiUYCLiAQ7I6Sw&usqp=CAU" alt="">
+                        <p>neumatico-----</p>
+                        <p>Precio: $1000</p>
+                        <button class="btn-agregar">Comprar</button>
+                    </div>
                 </div>
-                <div class="producto-carro-precio">
-                <p>precio</p>
-                </div>
-                <button class="producto-carro-borrar"><i class="bi bi-trash3-fill"></i></button>
+                
             </div>
-        </div>
-        <div class="carrito-comprar">
-            <div class="carrito-comprar-total">
-                <p>Total</p>
-                <p>$0000</p>
-            </div>
-        </div>
+        
+        </main>
     </div>
-    
 </body>
+
 </html>
