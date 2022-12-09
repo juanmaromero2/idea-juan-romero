@@ -79,6 +79,7 @@ const neumaticos = [
 const conteinerTienda =  document.querySelector("#conteinerTienda");
 let botonesComprar = document.querySelectorAll(".btn-agregar");
 let numeroCantidad = document.querySelector("#numeroCantidad");
+const conteinerCarrito = document.querySelector("#conteinerCarrito");
 
 function agregarCubiertas(){
     neumaticos.forEach(neumaticos => {
@@ -96,6 +97,9 @@ function agregarCubiertas(){
     agregarBtnComprar ();
 };
 agregarCubiertas();
+
+
+
 
 function agregarBtnComprar () {
     botonesComprar = document.querySelectorAll(".btn-comprar");
@@ -131,3 +135,45 @@ function actualizarCantidad(){
     let nuevoNumeroCantidad = neumaticosEnCarrito.reduce((acc, neumatico) => acc + neumatico.cantidad, 0);
     numeroCantidad.innerText = nuevoNumeroCantidad;
 }
+
+
+/*********** llevar productos al carrito  ************/
+
+const cubiertasCarrito = () => {
+    conteinerCarrito.innerHTML = ``
+
+    neumaticosEnCarrito.forEach((producto) =>{
+        const div = document.createElement("div");
+                div.className = "tienda";
+                div.innerHTML = `
+                <img class="imgTienda" src="${neumaticos.imagen}" alt="${neumaticos.medida}">
+                    <p>${neumaticos.medida}</p>
+                    <p>${neumaticos.precio}</p>
+                `;
+                conteinerCarrito.append(div);
+    })
+};
+cubiertasCarrito();
+
+
+
+
+
+
+
+// cubiertasCarrito.append(neumaticosEnCarrito);
+
+
+// function cubiertasCarrito(){
+//     neumaticosEnCarrito. forEach(carrito => {
+//         let div = document.createElement("div");
+//         div.classList.add("tienda");
+//         div.innerHTML = `
+//         <img class="imgTienda" src="${neumaticos.imagen}" alt="${neumaticos.medida}">
+//             <p>${neumaticos.medida}</p>
+//             <p>${neumaticos.precio}</p>
+//         `;
+//         conteinerCarrito.append(div);
+//     })
+// };
+// cubiertasCarrito()
